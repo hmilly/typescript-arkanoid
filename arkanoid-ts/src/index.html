@@ -1,59 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Typescript App</title>
-  </head>
-  <body>
-    <div id="main" class="main">
-      <canvas id="playField" width="1000" height="600"></canvas>
-      <img id="background" src="./images/background.png"></img>
-      <div id="display">
-        <div id="score"></div>
-        <button id="start">Start</button>
-        <div id="info">Press play!</div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Typescript App</title>
+</head>
+
+<body>
+  <div id="main" class="main">
+    <canvas id="playField" width="1000" height="600"></canvas>
+    <img id="background" src="./images/background.png"></img>
+    <div id="display">
+      <div id="scoreDiv">
+        <p>Score:</p>
+        <p id="score"></p>
+      </div>
+      <button id="start">Start</button>
+      <div id="info">
+        <p>Press play!</p>
       </div>
     </div>
-    <script src="./index.ts"></script>
-  </body>
-  <style>
-    :root {
-      --width: 1000px;
-      --height: 650px;
-    }
+  </div>
+  <script src="./index.ts"></script>
+</body>
+<style>
+  :root {
+    --width: 1000px;
+    --height: 650px;
+  }
 
-    #main {
-      position: relative;
-      width: 1000px;
-      margin: 0 auto;
-      width: var(--width);
-      height: var(--height);
-      font-size: 32px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+  #main {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+    width: var(--width);
+    height: var(--height);
+    font-family: Arial, Helvetica, sans-serif;
+    border: solid 1px black;
+    border-radius: 5px;
+  }
 
-    canvas {
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 10;
-      border-top: 1px solid grey;
-      border-left: 1px solid grey;
-      border-right: 1px solid grey;
-      margin-bottom: 40px;
-    }
+  canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    margin-bottom: 40px;
+  }
 
-    #display {
-      position: absolute;
-      bottom: 0;
-      display: flex;
-      justify-content: space-between;
-      width: var(--width);
-    }
 
-    #score,
-    #info {
-      width: 200px;
-    }
-  </style>
+  #display {
+    position: absolute;
+    bottom: 0;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--width);
+  }
+
+  #scoreDiv,
+  #info {
+    width: 30%;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  #start {
+    width: 20%;
+    border-radius: 5px;
+    background-color: rgb(0, 72, 255);
+    color: white;
+    font-size: 25px;
+  }
+
+  #start:hover {
+    background-color: rgb(21, 1, 201);
+    cursor: pointer;
+  }
+
+  #scoreDiv {
+    display: flex;
+    justify-content: space-around;
+  }
+</style>
+
 </html>
